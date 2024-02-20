@@ -1,0 +1,2065 @@
+{
+  "version": "v2",
+  "intent_combinations": [
+    [
+      "patient_name",
+      "patient_dob"
+    ]
+  ],
+  "intents": {
+    "cent_payment": {
+      "includes": [
+        "[point_digit:amount]",
+        "the amount is [point_digit:amount]",
+        "[point_digit:amount] is the paid amount"
+      ],
+      "excludes": [
+        "[two_digit:amount]",
+        "the amount is [two_digit:amount]",
+        "[two_digit:amount] is the paid amount",
+        "[three_digit:amount]",
+        "the amount is [three_digit:amount]",
+        "[three_digit:amount] is the paid amount"
+      ]
+    },
+    "double_payment": {
+      "includes": [
+        "[two_digit:amount]",
+        "the amount is [two_digit:amount]",
+        "[two_digit:amount] is the paid amount",
+        "The amount allowed was [two_digit:amount]",
+        "A payment of [two_digit:amount]",
+        "The amount allowed [two_digit:amount]"
+      ],
+      "excludes": [
+        "[three_digit:amount]",
+        "the amount is [three_digit:amount]",
+        "[three_digit:amount] is the paid amount"
+      ]
+    },
+    "triple_payment": {
+      "includes": [
+        "[three_digit:amount]",
+        "the amount is [three_digit:amount]",
+        "[three_digit:amount] is the paid amount",
+        "The amount submitted was [three_digit:amount]"
+      ],
+      "excludes": [
+        "[two_digit:amount]",
+        "the amount is [two_digit:amount]",
+        "[two_digit:amount] is the paid amount"
+      ]
+    },
+    "double_cent": {
+      "includes": [
+        "[two_digit:amount] and [point_digit:amount]",
+        "the amount is [two_digit:amount] and [point_digit:amount]",
+        "[two_digit:amount] and [point_digit:amount] is the paid amount",
+        "The amount allowed was [two_digit:amount] and [point_digit:amount]",
+        "A payment of [two_digit:amount] and [point_digit:amount]",
+        "The amount allowed [two_digit:amount] and [point_digit:amount]"
+      ],
+      "excludes": [
+        "[three_digit:amount]",
+        "the amount is [three_digit:amount]",
+        "[three_digit:amount] is the paid amount"
+      ]
+    },
+    "greeting": {
+      "includes": [
+        "How are you?",
+        "How are things going for you?",
+        "How's everything with you?",
+        "How's your day treating you?",
+        "How are you holding up?",
+        "How's life treating you?",
+        "How are you feeling today?",
+        "What's new with you?",
+        "How's your day been so far?",
+        "How's everything on your end?",
+        "Is everything going well today?",
+        "How's your day been so far?",
+        "Is your day going smoothly?",
+        "Has your day been good?",
+        "How's your day shaping up?",
+        "Is everything going alright for you today?",
+        "Has it been a good day for you?",
+        "Is your day going as planned?",
+        "Are things going well on your end today?",
+        "Has today been a positive day for you?"
+      ]
+    },
+    "assistance": {
+      "includes": [
+        "How can I assist you?",
+        "What can I do for you?",
+        "Is there anything I can help you with?",
+        "How may I be of service?",
+        "Do you need any assistance?",
+        "Can I be of any help to you?",
+        "What do you need help with?",
+        "Is there something I can do for you?",
+        "How may I support you?",
+        "Do you require any assistance from me?",
+        "How can I lend a hand?",
+        "Is there anything you need help with today?",
+        "What brings you in?",
+        "How may I assist you today?",
+        "Is there something on your mind that I can help with?",
+        "How may I aid you?",
+        "In what way can I be of help?",
+        "How can I assist you at this moment?",
+        "What assistance do you require?",
+        "Is there a specific way I can help you out?"
+      ]
+    },
+    "claim_assistance": {
+      "includes": [
+        "What details regarding the claim do you require?",
+        "Which information about the claim are you looking for?",
+        "Can you specify the claim details you need?",
+        "What particular information about the claim are you seeking?",
+        "Is there specific claim information you're interested in?",
+        "Could you clarify the details you need regarding the claim?",
+        "What specific claim-related information are you requesting?",
+        "Which details related to the claim do you want?",
+        "What kind of claim information are you looking for?",
+        "Do you have a particular aspect of the claim you need information on?",
+        "Do you have a question on this claim?",
+        "Alright. Do you have a question on this claim?",
+        "What information would you like to verify on this claim?",
+        "And you're calling for claims, right?",
+        "You are calling regarding claim status. Right",
+        "Are you calling related to claims or benefits",
+        "Are you calling related to claims or benefits or eligibility",
+        "You need info. realted to claims , eligibility or benefits"
+      ]
+    },
+    "anything_else": {
+      "includes": [
+        "Is there anything else you need help with?",
+        "Do you have any other questions or concerns?",
+        "Is there anything else I can assist you with?",
+        "Do you require any additional support or information?",
+        "Are there any other matters you'd like help addressing?",
+        "Is there something else on your mind that I can help with?",
+        "Do you need assistance with anything else?",
+        "Is there any other way I can be of service to you?",
+        "Are there any other issues you'd like me to assist you with?",
+        "Do you have any more inquiries or tasks for me?",
+        "Is there something specific you'd like more information or help on?"
+      ]
+    },
+    "rep_intro": {
+      "includes": [
+        "Hello, this is [rep_name] from [insurance_name].",
+        "Good morning, you've reached [rep_name] with [insurance_name].",
+        "Good evening, you've reached [rep_name] with [insurance_name].",
+        "Thank you for calling [insurance_name], my name is [rep_name].",
+        "Greetings, you're speaking with [rep_name] at [insurance_name].",
+        "Hello there, it's [rep_name] on the line from [insurance_name].",
+        "Hi, you've connected with [rep_name] representing [insurance_name].",
+        "This is [rep_name] at [insurance_name], how can I assist you today?",
+        "Good to have you on the line, this is [rep_name] from [insurance_name].",
+        "You're speaking with [rep_name] at [insurance_name], how may I help you?",
+        "Hello, [rep_name] here from [insurance_name], how can I be of service?"
+      ]
+    },
+    "ai_name": {
+      "includes": [
+        "Hi, my name is [rep_name]. Can I have your name please?",
+        "Hi, can I have your first and last name",
+        "What is your first and last name?",
+        "Could you please provide your first and last names?",
+        "Your name",
+        "your first and last name",
+        "Could you share with me your initial and final names?",
+        "What is your name and last name initial?"
+      ]
+    },
+    "claims_date": {
+      "includes": [
+        "Claim was received on [receive_date:date] and processed on [process_date:date]",
+        "Receive date of the claim is [receive_date:date] and process date is [process_date:date]",
+        "So claim received on [receive_date:date] and processed on [process_date:date]",
+        "Claim entered in the system on [receive_date:date] and started prcessing on [process_date:date]",
+        "Receive date is [receive_date:date] and process date is [process_date:date]",
+        "Received on [receive_date:date] and processed on [process_date:date]",
+        "[receive_date:date] is the received date of the claim and [process_date:date] is the processed date",
+        "Receive date [receive_date:date] process date [process_date:date]",
+        "Received and processed on [receive_date:date] [process_date:date]",
+        "Received date is same as process date, that is [receive_date:date] [process_date:date]",
+        "received date, processed date",
+        "receive date, process date",
+        "receive, process"
+      ]
+    },
+    "simple_date": {
+      "includes": [
+        "The date is [receive_date:date]",
+        "[receive_date:date]",
+        "[receive_date:date] is the date",
+        "It is [receive_date:date]",
+        "So the date is [receive_date:date]"
+      ],
+      "excludes": [
+        "process",
+        "processed",
+        "check",
+        "issued",
+        "cashed",
+        "cleared",
+        "received",
+        "receive"
+      ]
+    },
+    "received_date": {
+      "includes": [
+        "Claim was received on [receive_date:date]",
+        "Receive date of the claim is [receive_date:date]",
+        "So claim received on [receive_date:date]",
+        "Claim entered in the system on [receive_date:date]",
+        "Receive date is [receive_date:date]",
+        "Received on [receive_date:date]",
+        "[receive_date:date] is the received date of the claim",
+        "Receive date [receive_date:date]"
+      ],
+      "excludes": [
+        "process date",
+        "processed date",
+        "process",
+        "processed"
+      ]
+    },
+    "processed_date": {
+      "includes": [
+        "Claim was processed on [process_date:date]",
+        "Process date of the claim is [process_date:date]",
+        "So claim processed on [process_date:date]",
+        "Claim entered in the system on [process_date:date]",
+        "Process date is [process_date:date]",
+        "Processed on [process_date:date]",
+        "[process_date:date] is the processed date of the claim",
+        "Process date [process_date:date]",
+        "and claim processed on [process_date:date]"
+      ],
+      "excludes": [
+        "receive date",
+        "received date",
+        "receive",
+        "received"
+      ]
+    },
+    "simple_amount": {
+      "includes": [
+        "The amount is [paid_amt:amount]",
+        "[paid_amt:amount]",
+        "[paid_amt:amount] is the amount",
+        "It is [paid_amt:amount]",
+        "So the amount is [paid_amt:amount]"
+      ],
+      "excludes": [
+        "allowed amount",
+        "patient's responsibility",
+        "coinsurance",
+        "deductible",
+        "paid",
+        "check",
+        "Eft",
+        "Virtual Card Payment"
+      ]
+    },
+    "allowed_amount": {
+      "includes": [
+        "allowed amount is [allowed_amt:amount]",
+        "allowed amount of the claim is [allowed_amt:amount]",
+        "we allowed [allowed_amt:amount]",
+        "claim's allowed amount is [allowed_amt:amount]",
+        "amount allowed for this claim is [allowed_amt:amount]",
+        "[allowed_amt:amount] is the allowed amount",
+        "[allowed_amt:amount] is claim's allowed amount",
+        "allowed amount [allowed_amt:amount]"
+      ],
+      "excludes": [
+        "paid amount",
+        "patient's responsibility",
+        "coinsurance",
+        "deductible"
+      ]
+    },
+    "paid_amount": {
+      "includes": [
+        "paid amount is [paid_amt:amount]",
+        "paid amount of the claim is [paid_amt:amount]",
+        "we paid [paid_amt:amount]",
+        "claim's paid amount is [paid_amt:amount]",
+        "amount paid for this claim is [paid_amt:amount]",
+        "[paid_amt:amount] is the paid amount",
+        "[paid_amt:amount] is claim's paid amount",
+        "paid amount [paid_amt:amount]"
+      ],
+      "excludes": [
+        "allowed amount",
+        "patient's responsibility",
+        "coinsurance",
+        "deductible"
+      ]
+    },
+    "need_info": {
+      "includes": [
+        "I will be requiring some info",
+        "will you be able to provide me with some info.",
+        "First of all I need some provider's information",
+        "Lets start with provider info",
+        "In order to pull up details I require some information",
+        "Before we begin need some information",
+        "provider information",
+        "need some info.",
+        "can you assist me with providing some information",
+        "can you help me to pull provider infomation",
+        "I need some provider details",
+        "I will need some claim information",
+        "Can you provide me some patient's details?"
+      ]
+    },
+    "hold": {
+      "includes": [
+        "Kindly wait for a moment.",
+        "Please hold the line.",
+        "Could you please stay on hold?",
+        "I appreciate your patience.",
+        "I'll be right back with you.",
+        "Hold the line, please.",
+        "Thank you for your understanding.",
+        "Just a brief moment, please.",
+        "Bear with us for a moment.",
+        "Your patience is highly valued.",
+        "All right thank you let me check",
+        "Let me check",
+        "I will be checking the details. Hold on",
+        "I will put you on hold to check claim information",
+        "Please stay on the on the line"
+      ]
+    },
+    "npi_number": {
+      "includes": [
+        "Please tell me your NPI",
+        "What is the provider's NPI number?",
+        "Can you provide the NPI number for the provider?",
+        "May I have the NPI number for the provider?",
+        "Do you know the NPI number for the provider?",
+        "Could you share the provider's NPI number?",
+        "I need the NPI number for the provider, please.",
+        "What's the NPI number for the provider?",
+        "Could you give me the NPI number for the provider?",
+        "What is Group NPI number?",
+        "Can you provide the Group NPI number?",
+        "May I have the Group NPI number?",
+        "Do you know the Group NPI number?",
+        "Could you share the Group NPI number?",
+        "I need the Group NPI number, please.",
+        "What's the Group NPI number?",
+        "Could you give me the Group NPI number?",
+        "What is the facility NPI number?",
+        "Can you provide the facility NPI number?",
+        "May I have the facility NPI number?",
+        "Do you know the facility NPI number?",
+        "Could you share the facility NPI number?",
+        "I need the facility NPI number, please.",
+        "What's the facility NPI number?",
+        "Could you give me the facility NPI number?",
+        "What is the National Provider ID?",
+        "Can you provide the National Provider ID?",
+        "May I have the National Provider ID?",
+        "Do you know the National Provider ID?",
+        "Could you share the National Provider ID?",
+        "I need the National Provider ID, please.",
+        "What's the National Provider ID?",
+        "Could you give me the National Provider ID?",
+        "What is the group NPI number?",
+        "Can you provide the group NPI number?",
+        "May I have the group NPI number?",
+        "Do you know the group NPI number?",
+        "Could you share the group NPI number?",
+        "I need the group NPI number, please.",
+        "What's the group NPI number?",
+        "Could you give me the group NPI number?",
+        "group npi",
+        "NPI number",
+        "National Provder Id",
+        "NPI",
+        "NPI Id",
+        "Group NPI",
+        "Facility NPI",
+        "Ok, NPI?",
+        "Hmm, NPI?",
+        "Sure, NPI?",
+        "Alright, NPI?",
+        "Got it, NPI?",
+        "And, NPI?"
+      ],
+      "excludes": [
+        "TIN",
+        "Tin",
+        "rendering provider",
+        "tax id",
+        "phone number",
+        "call back number",
+        "policy number",
+        "member id"
+      ]
+    },
+    "rendering_npi": {
+      "includes": [
+        "What is the rendering provider number?",
+        "Can you provide the rendering provider number?",
+        "May I have the rendering provider number?",
+        "Do you know the rendering provider number?",
+        "Could you share the rendering provider number?",
+        "I need the rendering provider number, please.",
+        "What's the rendering provider number?",
+        "Could you give me the rendering provider number?",
+        "What is the rendering provider ID?",
+        "Can you provide the rendering provider ID?",
+        "Do you know the rendering provider ID?",
+        "Could you share the rendering provider ID?",
+        "I need the rendering provider ID, please.",
+        "What's the rendering provider ID?",
+        "Could you give me the rendering provider ID?",
+        "I'm looking for the rendering provider ID.",
+        "What is the rendering NPI?",
+        "Can you provide the rendering NPI?",
+        "May I have the rendering NPI?",
+        "Do you know the rendering NPI?",
+        "Could you share the rendering NPI?",
+        "I need the rendering NPI, please.",
+        "What's the rendering NPI?",
+        "Could you give me the rendering NPI?",
+        "I'm looking for the rendering NPI.",
+        "What is the rendering provider NPI?",
+        "Can you provide the rendering provider NPI?",
+        "May I have the rendering provider NPI?",
+        "Do you know the rendering provider NPI?",
+        "Could you share the rendering provider NPI?",
+        "I need the rendering provider NPI, please.",
+        "What's the rendering provider NPI?",
+        "Could you give me the rendering provider NPI?",
+        "What's the individual provider NPI?",
+        "What is the individual provider number?",
+        "Can you provide the individual provider number?",
+        "May I have the individual provider number?",
+        "Do you know the individual provider number?",
+        "Could you share the individual provider number?",
+        "I need the individual provider number, please.",
+        "What's the individual provider number?",
+        "Could you give me the individual provider number?",
+        "What is the individual provider ID?",
+        "Can you provide the individual provider ID?",
+        "Do you know the individual provider ID?",
+        "Could you share the individual provider ID?",
+        "rendering npi",
+        "individual provider",
+        "individual npi",
+        "rendering provider",
+        "rendering"
+      ],
+      "excludes": [
+        "facility npi",
+        "group npi",
+        "tax id",
+        "phone number",
+        "call back number"
+      ]
+    },
+    "tax_id": {
+      "includes": [
+        "What is the tax ID?",
+        "Can you provide the tax ID?",
+        "Do you have the tax identification number?",
+        "What is the provider's tax ID?",
+        "Could you share the provider's tax identification number?",
+        "I need the tax ID for the provider.",
+        "May I have the tax ID, please?",
+        "What is the tax identification number for the provider?",
+        "Do you know the tax ID of the provider?",
+        "Could you give me the tax ID?",
+        "What is the tax ID code?",
+        "Can you tell me the provider's tax ID?",
+        "I'm looking for the tax ID information.",
+        "What is the tax ID for billing purposes?",
+        "What is the provider's taxpayer identification number?",
+        "tax id",
+        "tax ID",
+        "What is the taxonomy code?",
+        "Can you provide the taxonomy code?",
+        "Do you have the taxonomy code?",
+        "Could you share the provider's taxonomy code?",
+        "I need the taxonomy code for the provider.",
+        "May I have the taxonomy code, please?",
+        "What is the taxonomy code for the provider?",
+        "taxonomy code",
+        "taxonomy number",
+        "taxonomy",
+        "What is the Tin number?",
+        "Can you provide the Tin number?",
+        "Do you have the Tin number?",
+        "Could you share the provider's Tin number?",
+        "I need the Tin number for the provider.",
+        "May I have the Tin number, please?",
+        "What is the Tin number for the provider?",
+        "TIN",
+        "Tin",
+        "Tin number",
+        "Ok, tax ID?",
+        "Hmm, tax ID?",
+        "Sure, tax ID?",
+        "Alright, taxonomy code?",
+        "Got it, Tin number?",
+        "So, TIN?",
+        "And, taxonomy number?"
+      ],
+      "excludes": [
+        "npi",
+        "provider number",
+        "phone number",
+        "call back number",
+        "policy number",
+        "member id"
+      ]
+    },
+    "facility_name": {
+      "includes": [
+        "What is the facility's name?",
+        "Can you provide the facility's name?",
+        "Do you have the facility's name?",
+        "May I have the facility's name?",
+        "Could you share the facility's name?",
+        "Provide me with the facility's name, please.",
+        "I need the facility's name.",
+        "Could you let me know the facility's name?",
+        "Please share the facility name.",
+        "What is the name of the facility?",
+        "Need facility name",
+        "facility name",
+        "facility's name",
+        "What is the office name?",
+        "Can you provide the office name?",
+        "Do you have the office name?",
+        "May I have the office name?",
+        "Could you share the office name?",
+        "Provide me with the office name, please.",
+        "I need the office name.",
+        "Could you let me know the office name?",
+        "Please share the office name.",
+        "What is the name of the office?",
+        "office name",
+        "What is the group name?",
+        "Can you provide the group name?",
+        "Do you have the group name?",
+        "May I have the group name?",
+        "Could you share the group name?",
+        "Provide me with the group name, please.",
+        "I need the group name.",
+        "Could you let me know the group name?",
+        "Please share the group name.",
+        "What is the name of the group?",
+        "group name",
+        "Ok, group name?",
+        "Hmm, office name?",
+        "Sure, facility name?",
+        "And, provider office name?",
+        "provider office name"
+      ],
+      "excludes": [
+        "patient's name",
+        "policy holder name",
+        "doctor name",
+        "provider name",
+        "office phone number",
+        "npi",
+        "rendering npi",
+        "tax id"
+      ]
+    },
+    "provider_name": {
+      "includes": [
+        "What is the provider's name?",
+        "Can you provide the provider's name?",
+        "Do you have the provider's name?",
+        "May I have the provider's name?",
+        "Could you share the provider's name?",
+        "Provide me with the provider's name, please.",
+        "I need the provider's name.",
+        "Could you let me know the provider's name?",
+        "Please share the provider name.",
+        "What is the individual provider's name?",
+        "Can you provide the individual provider's name?",
+        "Do you have the individual provider's name?",
+        "May I have the individual provider's name?",
+        "Could you share the individual provider's name?",
+        "What is the name of the provider?",
+        "What is the doctor's name?",
+        "Can you provide the doctor's name?",
+        "Do you have the doctor's name?",
+        "May I have the doctor's name?",
+        "Could you share the doctor's name?",
+        "Provide me with the doctor's name, please.",
+        "I need the doctor's name.",
+        "Could you let me know the doctor's name?",
+        "Please share the doctor name.",
+        "What is the name of the doctor?",
+        "doctor name",
+        "doctor's name",
+        "doctor first name and last name initial?",
+        "I need the servicing provider's name.",
+        "Do you have the servicing provider's name?",
+        "What is the servicing provider name",
+        "Doctor's first and last name",
+        "What is the doctor's first and last name",
+        "May I have the doctor's first and last name",
+        "Servicing provider name",
+        "Servicing provider",
+        "Ok, provider name?",
+        "Hmm, doctor name?",
+        "Sure, doctor first, last name?",
+        "And, individual provider name?",
+        "provider name",
+        "doctor name",
+        "individual provider name"
+      ],
+      "excludes": [
+        "patient's name",
+        "policy holder name",
+        "facility name",
+        "group name",
+        "office name",
+        "provider office name"
+      ]
+    },
+    "office_number": {
+      "includes": [
+        "What is the provider's phone number?",
+        "Can you provide the provider's phone number?",
+        "Do you have the provider's phone number?",
+        "May I have the provider's phone number?",
+        "Could you share the provider's phone number?",
+        "Provide me with the provider's phone number, please.",
+        "I need the provider's phone number.",
+        "Could you let me know the provider's phone number?",
+        "Please share the provider phone number.",
+        "What is the phone number of the provider?",
+        "What is the doctor's phone number?",
+        "Can you provide the doctor's phone number?",
+        "Do you have the doctor's phone number?",
+        "May I have the doctor's phone number?",
+        "Could you share the doctor's phone number?",
+        "Provide me with the doctor's phone number, please.",
+        "I need the doctor's phone number.",
+        "Could you let me know the doctor's phone number?",
+        "Please share the doctor phone number.",
+        "What is the phone number of the doctor?",
+        "doctor phone number",
+        "doctor's phone number",
+        "I need the servicing provider's phone number.",
+        "Do you have the servicing provider's phone number?",
+        "What is the servicing provider phone number",
+        "Servicing provider phone number",
+        "What is the office phone number?",
+        "Can you provide the office phone number?",
+        "Do you have the office phone number?",
+        "May I have the office phone number?",
+        "Could you share the office phone number?",
+        "office phone number",
+        "What is the facility's phone number?",
+        "Can you provide the facility's phone number?",
+        "Do you have the facility's phone number?",
+        "May I have the facility's phone number?",
+        "Could you share the facility's phone number?",
+        "Provide me with the facility's phone number, please.",
+        "I need the facility's phone number.",
+        "facility phone number",
+        "What is the group phone number?",
+        "Can you provide the group phone number?",
+        "Do you have the group phone number?",
+        "May I have the group phone number?",
+        "Could you share the group phone number?",
+        "Provide me with the group phone number, please.",
+        "I need the group phone number.",
+        "group phone number",
+        "May I get the office telephone phone number",
+        "Provider telephone number",
+        "group telephone number",
+        "facility telephone number",
+        "Ok, provider phone number?",
+        "Hmm, doctor telephone number?",
+        "Sure, group phone number?",
+        "Alright, facility phone number",
+        "And, office phone number"
+      ],
+      "excludes": [
+        "npi",
+        "rendering npi",
+        "provider id",
+        "call back number",
+        "office name",
+        "doctor name",
+        "provder name",
+        "policy number",
+        "member id",
+        "patient phone number",
+        "patient telephone number",
+        "Your telephone number",
+        "Your phone number"
+      ]
+    },
+    "provider_address": {
+      "includes": [
+        "What is the location of the facility?",
+        "Could you provide me with the address of the facility?",
+        "I'm looking for information on the facility's address.",
+        "Can you tell me where the facility is located?",
+        "What's the physical address of the facility?",
+        "Where can I find the facility?",
+        "I'm trying to locate the facility; do you have its address?",
+        "Could you share the address for the facility?",
+        "I need to know the address of the facility, please.",
+        "Do you have information on the facility's address?",
+        "Can you provide the servicing address for the provider?",
+        "What is the provider's servicing address?",
+        "Could you share the address where the provider offers services?",
+        "I'm inquiring about the servicing address of the provider.",
+        "Where can I find the provider's servicing address?",
+        "What is the location where the provider offers services?",
+        "Could you give me the servicing address for the provider, please?",
+        "I need information on the provider's servicing address.",
+        "Where is the provider's service address located?",
+        "Can you share details about the provider's servicing location?",
+        "What is the location of the doctor?",
+        "Could you provide me with the address of the doctor?",
+        "I'm looking for information on the doctor's address.",
+        "Can you tell me where the doctor is located?",
+        "What's the physical address of the doctor?",
+        "Where can I find the doctor?",
+        "I'm trying to locate the doctor; do you have its address?",
+        "Could you share the address for the doctor?",
+        "doctor address",
+        "servicing address",
+        "facility address",
+        "group address",
+        "provider address",
+        "Ok, servicing address",
+        "Hmm, group address",
+        "Sure, provider address",
+        "Alright, doctor's address",
+        "And, facility address"
+      ],
+      "excludes": [
+        "patient's address"
+      ]
+    },
+    "call_back_number": {
+      "includes": [
+        "What is your phone number?",
+        "What is your telephone phone number?",
+        "Telphone number of yours?",
+        "Your telephone number?",
+        "Your phone number?",
+        "What is the call back number?",
+        "Can you provide the call back number?",
+        "Do you have the call back number?",
+        "May I have the call back number?",
+        "Could you share the call back number?",
+        "Provide me with the call back number, please.",
+        "I need the call back number.",
+        "Could you let me know the call back number?",
+        "What is the number to reach you?",
+        "Any number to reach you",
+        "Number tou reach you",
+        "Could you give me a contact number for callbacks?",
+        "Telephone number to callback?",
+        "Is there any number to reach you?",
+        "Is there any number to call you back?",
+        "Can you provide your call back number, in case call gets disconnected",
+        "call back number",
+        "Ok, call back number",
+        "Hmm, Telephone number to callback",
+        "Sure, your phone number",
+        "And, call back number"
+      ],
+      "excludes": [
+        "office phone number",
+        "provider phone number",
+        "office name",
+        "policy number",
+        "member id",
+        "npi",
+        "tax id",
+        "rendering npi",
+        "provider telephone number",
+        "office telephone number"
+      ]
+    },
+    "patient_name": {
+      "includes": [
+        "What is the patient's name?",
+        "Can you provide the patient's name?",
+        "Do you have the patient's name?",
+        "May I have the patient's name?",
+        "Could you share the patient's name?",
+        "Provide me with the patient's name, please.",
+        "I need the patient's name.",
+        "Could you let me know the patient's name?",
+        "What is the name under this member id?",
+        "Name of the person, this member id belongs to?",
+        "This member id belongs to which patient?",
+        "This policy belongs to which patient?",
+        "Please share the patient name.",
+        "What is the name of the patient?",
+        "What is the name of policy holder",
+        "What is policy holder's name?",
+        "Need policy holder's name",
+        "Policy holder name",
+        "patient name",
+        "patient's name",
+        "member name",
+        "name of policy holder",
+        "name of patient",
+        "Ok, policy holder name",
+        "Hmm, patient name",
+        "Sure, patient's name",
+        "Alright, doctor's address",
+        "And, member name"
+      ],
+      "excludes": [
+        "provider name",
+        "doctor name",
+        "office name",
+        "facility name"
+      ]
+    },
+    "policy_number": {
+      "includes": [
+        "What is the member ID?",
+        "Can you provide the member ID?",
+        "Do you have the member ID?",
+        "May I have the member ID?",
+        "Could you share the member ID?",
+        "Provide me with the member ID, please.",
+        "I need the member ID.",
+        "Could you let me know the member ID?",
+        "Please share the member ID.",
+        "Provide me the patient's policy number.",
+        "Can you share the policy number for the patient?",
+        "What is the patient's policy number?",
+        "What is the ID of the patient?",
+        "May I have the policy number for the patient?",
+        "Please provide the patient's policy number.",
+        "I need the policy number for the patient.",
+        "Could you give me the patient's policy number?",
+        "What's the policy number for the patient?",
+        "Do you have the patient's policy number?",
+        "Share the patient's policy number with me, please.",
+        "What is the patient's insurance ID?",
+        "Can you provide the patient's insurance ID?",
+        "May I have the patient's insurance ID?",
+        "Do you know the patient's insurance ID?",
+        "Could you share the patient's insurance ID?",
+        "I need the patient's insurance ID, please.",
+        "What's the insurance ID for the patient?",
+        "Could you give me the insurance information for the patient?",
+        "ID of patient",
+        "ID of member",
+        "ID of policy holder",
+        "ID of this patient?",
+        "member id",
+        "policy number",
+        "patient's member id",
+        "insurance id",
+        "Ok, policy number",
+        "Hmm, patient id",
+        "Sure, patient's member id",
+        "Alright, member id",
+        "And, patient's insurance id",
+        "Please provide patient's [insurance_name:id] ID",
+        "Do you have member's [insurance_name:id] ID",
+        "What is [insurance_name:id] ID of the patient?"
+      ],
+      "excludes": [
+        "npi",
+        "tax id",
+        "phone number",
+        "call back number",
+        "provider id"
+      ]
+    },
+    "patient_dob": {
+      "includes": [
+        "What is the patient's date of birth?",
+        "Can you provide the patient's date of birth?",
+        "Do you have the patient's date of birth?",
+        "May I have the patient's date of birth?",
+        "Could you share the patient's date of birth?",
+        "Provide me with the patient's date of birth, please.",
+        "I need the patient's date of birth.",
+        "What is the patient's born date?",
+        "On which date patient was born",
+        "Do you have the patient's born date?",
+        "patient's born date",
+        "On which date patient took birth?",
+        "date patient took birth?",
+        "Could you let me know the patient's date of birth?",
+        "Please share the patient date of birth.",
+        "What is the date of birth of the patient?",
+        "What is the date of birth of policy holder",
+        "What is member's date of birth?",
+        "Need member's date of birth",
+        "date of birth",
+        "birth date",
+        "Member date of birth",
+        "What is policy holder's date of birth?",
+        "Need policy holder's date of birth",
+        "Policy holder date of birth",
+        "patient date of birth",
+        "patient's date of birth",
+        "member date of birth",
+        "Ok, date of birth",
+        "Hmm, member date of birth",
+        "Sure, date on which patient was born",
+        "Alright, born date of the patient",
+        "And, birth date",
+        "DOB",
+        "What is the patent's DOB?"
+      ],
+      "excludes": [
+        "patient name",
+        "member name",
+        "claim",
+        "date of service",
+        "DOS",
+        "Claims DOS"
+      ]
+    },
+    "claim_dos": {
+      "includes": [
+        "What is the claim's date of service?",
+        "Can you provide the claim's date of service?",
+        "Do you have the claim's date of service?",
+        "May I have the claim's date of service?",
+        "Could you share the claim's date of service?",
+        "Provide me with the claim's date of service, please.",
+        "I need the claim's date of service.",
+        "Could you let me know the claim's date of service?",
+        "Please share the claim date of service.",
+        "What is the date of service of claim",
+        "What is claim's date of service?",
+        "Need claim's date of service",
+        "date of service",
+        "claim date of service",
+        "claim date of service",
+        "claim's date of service",
+        "Ok, date of service",
+        "Hmm, service date of the claim",
+        "Sure, service date",
+        "Alright, claim's date of service",
+        "And, date of service",
+        "What is the DOS?",
+        "DOS"
+      ],
+      "excludes": [
+        "Birth date",
+        "Birth",
+        "DOB",
+        "patient",
+        "member",
+        "date of birth"
+      ]
+    },
+    "medicare_part": {
+      "includes": [
+        "Medicare Part B",
+        "For Medicare Part B, say the letter B",
+        "For Medicare Part B, save the letter B",
+        "Part B"
+      ],
+      "excludes": [
+        "Medicare Part A",
+        "For Medicare Part A, say the letter A",
+        "Medicare Part A",
+        "Part A"
+      ]
+    },
+    "medicare_state": {
+      "includes": [
+        "Please choose the state in which the services were rendered or where your practice or company is located",
+        "Please choose the state in which the services were rendered or where your practice or company is located. Arkansas. Colorado. Louisiana. Mississippi. New Mexico. Oklahoma. Texas. or other",
+        "Arkansas",
+        "Colorado",
+        "Louisiana",
+        "Mississippi",
+        "New Mexico",
+        "Oklahoma",
+        "Texas",
+        "Choose the state",
+        "state"
+      ]
+    },
+    "medicare_q3": {
+      "includes": [
+        "Are you calling to correct or change information on a previously processed claim",
+        "previously processed claim",
+        "Are you calling to correct or change information on a previously processed claim? Please say yes or no."
+      ]
+    },
+    "medicare_q4": {
+      "includes": [
+        "Main menu. When you hear the option you want, just say it. Eligibility. Claim status. Patient account number. Financial information, pricing or say, I have a question."
+      ]
+    },
+    "medicare_q5": {
+      "includes": [
+        "what's your NPI?",
+        "Okay, claim status. First, what's your NPI?",
+        "Please tell me your NPI",
+        "NPI",
+        "National Provider ID"
+      ],
+      "excludes": [
+        "PTAN",
+        "TAX ID",
+        "TIN"
+      ]
+    },
+    "medicare_q6": {
+      "includes": [
+        "And what's your P tan?",
+        "And what's your PN",
+        "P Tan",
+        "P Ten",
+        "P10",
+        "P 10",
+        "What is the Ptan Number",
+        "PTAN Number",
+        "Provider Ptan",
+        "Pea"
+      ],
+      "excludes": [
+        "NPI",
+        "TAX ID",
+        "TIN"
+      ]
+    },
+    "medicare_q7": {
+      "includes": [
+        "And what's your tax id?",
+        "What is the tax id number",
+        "What is the last five digits of tax id",
+        "OK now what's the last five digits of your 10",
+        "OK now what's the last five digits of your tin",
+        "OK now what's the last five digits of your pin",
+        "last five digits",
+        "tax id number",
+        "Tin Number",
+        "Tin"
+      ],
+      "excludes": [
+        "PTAN",
+        "NPI",
+        "National Provider ID",
+        "first",
+        "name",
+        "Alright. What's her first and last name?",
+        "Alright. What's his first and last name?",
+        "first and last name"
+      ]
+    },
+    "medicare_q8": {
+      "includes": [
+        "For all claim related questions, say claims",
+        "claim related"
+      ]
+    },
+    "medicare_q9": {
+      "includes": [
+        "In order to check the status of the claim or verify the reason for a denial, say claim status",
+        "status of the claim"
+      ]
+    },
+    "medicare_q10": {
+      "includes": [
+        "What's the patient's medicare number?",
+        "patient's medicare number",
+        "medicare number"
+      ]
+    },
+    "medicare_q11": {
+      "includes": [
+        "Alright. What's her first and last name?",
+        "Alright. What's his first and last name?",
+        "first and last name",
+        "patient's name"
+      ],
+      "excludes": [
+        "last five digits",
+        "tax id number"
+      ]
+    },
+    "medicare_q12": {
+      "includes": [
+        "Alright. What's the claim date of service",
+        "What is the date of service",
+        "date of service"
+      ]
+    },
+    "aetna_npi": {
+      "includes": [
+        "Say or Enter your NPI or Tax id.",
+        "Please say or enter your NPI or tax ID.",
+        "Save or Enter your NPI or Tax id.",
+        "Please save or enter your NPI or tax ID.",
+        "Enter your NPI or Tax id"
+      ]
+    },
+    "aetna_taxid": {
+      "includes": [
+        "Please Enter or say the tax id",
+        "Please enter the tax id, the claim was filed under",
+        "tax id",
+        "I see multiple tax ID's for you. Please enter or save a tax ID the claim was filed under."
+      ],
+      "excludes": [
+        "NPI",
+        "MPI"
+      ]
+    },
+    "aetna_claims": {
+      "includes": [
+        "Thanks, I found your record. Let's get started. Say claims or press 1. Coverage and benefits, or press 2. Precertification or press 3 Contact information or press 4 Appeal inquiries or press 5 or join the network. Or 6.",
+        "Say claims or press 1",
+        "Say claims or press one",
+        "Save claims or press 1",
+        "Save claims or press one"
+      ]
+    },
+    "aetna_memberid": {
+      "includes": [
+        "Thanks, I found your record. Please say or enter the patient's Aetna ID.",
+        "Please say or enter the patient's Aetna Id",
+        "Please say or enter the patient's etna Id",
+        "Please say or enter the patient's Edna Id",
+        "Aetna Id",
+        "Aetna ID",
+        "Edna Id",
+        "Etna Id"
+      ]
+    },
+    "aetna_dob": {
+      "includes": [
+        "Enter or say the patient's Date of birth",
+        "Enter or save the patient's Date of birth",
+        "Date of Birth"
+      ]
+    },
+    "aetna_dos": {
+      "includes": [
+        "Please enter or say the Date of Service",
+        "Please enter or save the date of service.",
+        "Date of service"
+      ]
+    },
+    "aetna_exit": {
+      "includes": [
+        "Are there any other patient's I can help you with",
+        "Are there any other patients I can help you with? Say yes or press 1. No. 2."
+      ],
+      "excludes": [
+        "I didn't find any claims for that patient under your tax ID."
+      ]
+    },
+    "aetna_correct": {
+      "includes": [
+        "You can say check another claim or press 1. Mailing address or press 2. Payer ID 3. Or main menu for."
+      ]
+    },
+    "vsp_phone": {
+      "includes": [
+        "Please enter your office phone number area code first",
+        "phone number",
+        "office phone number"
+      ],
+      "excludes": [
+        "To continue, you'll need to provide the members ID number, the last four digits of their Social Security number and date of birth or the authorization number. If you don't have this information, just give us a call when you have it."
+      ]
+    },
+    "vsp_option1": {
+      "includes": [
+        "OK, we were able to locate your office. To access information by a member ID, press 1. By the last four digits of a Social Security number, press 2. An authorization number, press 3.",
+        "To access information by a member ID, press 1."
+      ]
+    },
+    "vsp_memberid": {
+      "includes": [
+        "Enter the members ID number followed by the pound sign. If the ID has both numbers and letters, press 9 now.",
+        "Enter the members ID number"
+      ],
+      "excludes": [
+        "To continue, you'll need to provide the members ID number, the last four digits of their Social Security number and date of birth or the authorization number. If you don't have this information, just give us a call when you have it."
+      ]
+    },
+    "vsp_option2": {
+      "includes": [
+        "If you are calling about claims, press 1",
+        "If you are calling about claims"
+      ]
+    }
+  },
+  "entities": {
+    "rep_name": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "Jordan Smith",
+          "synonyms": [
+            "Jordan",
+            "Smith",
+            "Mr. Jordan",
+            "Mr. Smith",
+            "Mr. Jordan Smith"
+          ]
+        },
+        {
+          "value": "Michael Johnson",
+          "synonyms": [
+            "Michael",
+            "Johnson",
+            "Mr. Michael",
+            "Mr. Johnson",
+            "Mr. Michael Johnson"
+          ]
+        },
+        {
+          "value": "Emily Davis",
+          "synonyms": [
+            "Emily",
+            "Davis",
+            "Ms. Emily",
+            "Ms. Davis",
+            "Ms. Emily Davis"
+          ]
+        },
+        {
+          "value": "Christopher Miller",
+          "synonyms": [
+            "Christopher",
+            "Miller",
+            "Mr. Christopher",
+            "Mr. Miller",
+            "Mr. Christopher Miller"
+          ]
+        },
+        {
+          "value": "Jessica Brown",
+          "synonyms": [
+            "Jessica",
+            "Brown",
+            "Ms. Jessica",
+            "Ms. Brown",
+            "Ms. Jessica Brown"
+          ]
+        },
+        {
+          "value": "Daniel Taylor",
+          "synonyms": [
+            "Daniel",
+            "Taylor",
+            "Mr. Daniel",
+            "Mr. Taylor",
+            "Mr. Daniel Taylor"
+          ]
+        },
+        {
+          "value": "Mike",
+          "synonyms": [
+            "Mikkey",
+            "Michael",
+            "Mark",
+            "Michell"
+          ]
+        },
+        {
+          "value": "Jennifer",
+          "synonyms": [
+            "Jenny",
+            "Jen",
+            "Jenna",
+            "Jenn"
+          ]
+        },
+        {
+          "value": "Robert",
+          "synonyms": [
+            "Rob",
+            "Bobby",
+            "Robbie",
+            "Bob"
+          ]
+        },
+        {
+          "value": "Amanda",
+          "synonyms": [
+            "Mandy",
+            "Amy",
+            "Amandy",
+            "Manda"
+          ]
+        },
+        {
+          "value": "William",
+          "synonyms": [
+            "Will",
+            "Bill",
+            "Billy",
+            "Willy"
+          ]
+        },
+        {
+          "value": "Elizabeth",
+          "synonyms": [
+            "Liz",
+            "Beth",
+            "Lizzy",
+            "Eliza"
+          ]
+        }
+      ]
+    },
+    "insurance_name": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "Aetna",
+          "synonyms": [
+            "Edna",
+            "Etna"
+          ]
+        },
+        {
+          "value": "Blue Cross Blue Shield",
+          "synonyms": [
+            "BCBS",
+            "Blue Shield",
+            "Blue Cross"
+          ]
+        },
+        {
+          "value": "UnitedHealthcare",
+          "synonyms": [
+            "United Health",
+            "UHC",
+            "UnitedCare"
+          ]
+        },
+        {
+          "value": "Cigna",
+          "synonyms": [
+            "Signa",
+            "Sina",
+            "Cig"
+          ]
+        },
+        {
+          "value": "Humana",
+          "synonyms": [
+            "Human",
+            "Humane",
+            "Huma"
+          ]
+        },
+        {
+          "value": "Anthem",
+          "synonyms": [
+            "Anthem Blue Cross",
+            "Blue Anthem",
+            "Anthem BC"
+          ]
+        },
+        {
+          "value": "VSP Vision Care",
+          "synonyms": [
+            "VSP",
+            "Vision Service Plan",
+            "VSP Vision"
+          ]
+        },
+        {
+          "value": "EyeMed Vision Care",
+          "synonyms": [
+            "EyeMed",
+            "Eye Med",
+            "EyeMed Vision"
+          ]
+        },
+        {
+          "value": "Davis Vision",
+          "synonyms": [
+            "Davis",
+            "Davis Vision Care",
+            "Davis Eye Care"
+          ]
+        },
+        {
+          "value": "Spectera",
+          "synonyms": [
+            "Spectra",
+            "Spectra Vision",
+            "Spectera Vision"
+          ]
+        },
+        {
+          "value": "Superior Vision",
+          "synonyms": [
+            "Superior",
+            "Superior Vision Care",
+            "Superior Eye Care"
+          ]
+        }
+      ]
+    },
+    "claim_date": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "December Three Twenty Three",
+          "synonyms": [
+            "December Three Two Thousand Twenty Three",
+            "December Third Twenty Three",
+            "Twelve Three Twenty Three",
+            "12,3,23",
+            "12 3 23"
+          ]
+        },
+        {
+          "value": "January Five Twenty Two",
+          "synonyms": [
+            "January Five Two Thousand Twenty Two",
+            "Jan Five Two Thousand Twenty Two",
+            "January Fifth Twenty Two",
+            "One Five Twenty Two",
+            "1 5 22",
+            "1, 5, 22"
+          ]
+        },
+        {
+          "value": "February Two Twenty One",
+          "synonyms": [
+            "February Two Two Thousand Twenty One",
+            "February Second Twenty One",
+            "Feb Second Twenty One",
+            "Two Two Twenty One",
+            "2 2 21",
+            "2, 2, 21"
+          ]
+        },
+        {
+          "value": "March Four Twenty",
+          "synonyms": [
+            "March Four Two Thousand Twenty",
+            "March Four Twenty Twenty",
+            "March Fourth Twenty Twenty",
+            "Three Four Two Zero",
+            "3 4 20",
+            "3, 4, 20"
+          ]
+        },
+        {
+          "value": "April Eight Nineteen",
+          "synonyms": [
+            "April Eight Two Thousand Nineteen",
+            "April Eighth Twenty Nineteen",
+            "April Eighth Nineteen",
+            "Four Eight Nineteen",
+            "4 8 19",
+            "4, 8, 19"
+          ]
+        },
+        {
+          "value": "May Nine Twenty Three",
+          "synonyms": [
+            "May Nine Two Thousand Twenty Three",
+            "May Ninth Twenty Three",
+            "May Ninth Twenty Three",
+            "Five Nine Twenty Three",
+            "5 9 23",
+            "5, 9, 23"
+          ]
+        }
+      ],
+      "includes": [
+        "[claim_date]"
+      ]
+    },
+    "receive_date": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "December Three Twenty Three",
+          "synonyms": [
+            "December Three Two Thousand Twenty Three",
+            "December Third Twenty Three",
+            "Twelve Three Twenty Three",
+            "12,3,23",
+            "12 3 23"
+          ]
+        },
+        {
+          "value": "January Five Twenty Two",
+          "synonyms": [
+            "January Five Two Thousand Twenty Two",
+            "Jan Five Two Thousand Twenty Two",
+            "January Fifth Twenty Two",
+            "One Five Twenty Two",
+            "1 5 22",
+            "1, 5, 22"
+          ]
+        },
+        {
+          "value": "February Two Twenty One",
+          "synonyms": [
+            "February Two Two Thousand Twenty One",
+            "February Second Twenty One",
+            "Feb Second Twenty One",
+            "Two Two Twenty One",
+            "2 2 21",
+            "2, 2, 21"
+          ]
+        },
+        {
+          "value": "March Four Twenty",
+          "synonyms": [
+            "March Four Two Thousand Twenty",
+            "March Four Twenty Twenty",
+            "March Fourth Twenty Twenty",
+            "Three Four Two Zero",
+            "3 4 20",
+            "3, 4, 20"
+          ]
+        },
+        {
+          "value": "April Eight Nineteen",
+          "synonyms": [
+            "April Eight Two Thousand Nineteen",
+            "April Eighth Twenty Nineteen",
+            "April Eighth Nineteen",
+            "Four Eight Nineteen",
+            "4 8 19",
+            "4, 8, 19"
+          ]
+        },
+        {
+          "value": "May Nine Twenty Three",
+          "synonyms": [
+            "May Nine Two Thousand Twenty Three",
+            "May Ninth Twenty Three",
+            "May Ninth Twenty Three",
+            "Five Nine Twenty Three",
+            "5 9 23",
+            "5, 9, 23"
+          ]
+        }
+      ],
+      "includes": []
+    },
+    "process_date": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "December Three Twenty Three",
+          "synonyms": [
+            "December Three Two Thousand Twenty Three",
+            "December Third Twenty Three",
+            "Twelve Three Twenty Three",
+            "12,3,23",
+            "12 3 23"
+          ]
+        },
+        {
+          "value": "January Five Twenty Two",
+          "synonyms": [
+            "January Five Two Thousand Twenty Two",
+            "Jan Five Two Thousand Twenty Two",
+            "January Fifth Twenty Two",
+            "One Five Twenty Two",
+            "1 5 22",
+            "1, 5, 22"
+          ]
+        },
+        {
+          "value": "February Two Twenty One",
+          "synonyms": [
+            "February Two Two Thousand Twenty One",
+            "February Second Twenty One",
+            "Feb Second Twenty One",
+            "Two Two Twenty One",
+            "2 2 21",
+            "2, 2, 21"
+          ]
+        },
+        {
+          "value": "March Four Twenty",
+          "synonyms": [
+            "March Four Two Thousand Twenty",
+            "March Four Twenty Twenty",
+            "March Fourth Twenty Twenty",
+            "Three Four Two Zero",
+            "3 4 20",
+            "3, 4, 20"
+          ]
+        },
+        {
+          "value": "April Eight Nineteen",
+          "synonyms": [
+            "April Eight Two Thousand Nineteen",
+            "April Eighth Twenty Nineteen",
+            "April Eighth Nineteen",
+            "Four Eight Nineteen",
+            "4 8 19",
+            "4, 8, 19"
+          ]
+        },
+        {
+          "value": "May Nine Twenty Three",
+          "synonyms": [
+            "May Nine Two Thousand Twenty Three",
+            "May Ninth Twenty Three",
+            "May Ninth Twenty Three",
+            "Five Nine Twenty Three",
+            "5 9 23",
+            "5, 9, 23"
+          ]
+        }
+      ],
+      "includes": []
+    },
+    "paid_amt": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "Ten Dollars",
+          "synonyms": [
+            "Ten Dollar",
+            "10 Dollars",
+            "One Zero Dollars",
+            "1 0 Dollars",
+            "Ten Dollars Even",
+            "10 Dollars Even",
+            "One Zero Dollars Even",
+            "1 0 Dollars Even",
+            "Ten",
+            "10",
+            "One Zero",
+            "1 0"
+          ]
+        },
+        {
+          "value": "One Hundred Dollars",
+          "synonyms": [
+            "1 Hundred Dollars",
+            "100 Dollars",
+            "One Zero Zero Dollars",
+            "1 0 0 Dollars",
+            "1 Hundred Dollars Even",
+            "100 Dollars Even",
+            "One Zero Zero Dollars Even",
+            "1 0 0 Dollars Even",
+            "1 Hundred",
+            "100",
+            "One Zero Zero",
+            "1 0 0"
+          ]
+        },
+        {
+          "value": "Twenty Five Dollars",
+          "synonyms": [
+            "Two Five Dollars",
+            "Twenty Five Dolars",
+            "25 Dollars",
+            "2 5 Dollars",
+            "Two Five Dollars Even",
+            "Twenty Five Dollars Even",
+            "25 Dollars Even",
+            "2 5 Dollars Even",
+            "Two Five",
+            "Twenty Five",
+            "25",
+            "2 5"
+          ]
+        },
+        {
+          "value": "Twenty Dollars and Twenty Cent",
+          "synonyms": [
+            "Twenty Dollars and Twenty Cents",
+            "Twenty Dollars, Twenty Cents",
+            "Two Zero Point Two Zero",
+            "Twenty Point Two Zero",
+            "Twenty Dot Two Zero",
+            "Twenty Point Twenty",
+            "Two Zero Point Twenty",
+            "2 0 . 2 0",
+            "20 . 20",
+            "20.20"
+          ]
+        },
+        {
+          "value": "Forty Five Dollars and Fifty Cent",
+          "synonyms": [
+            "Forty Five Dollars and Fifty Cents",
+            "Four Five Point Five Zero",
+            "Forty Five Point Five Zero",
+            "Forty Five Dot Five Zero",
+            "Forty Five Point Fifty",
+            "Four Five Point Fifty",
+            "4 5 . 5 0",
+            "45 . 50"
+          ]
+        },
+        {
+          "value": "Three Hundred Five Dollars and Seventy One Cents",
+          "synonyms": [
+            "Three Hundred Five Dollars and Seventy One Cent",
+            "Three Hundred Five Dollars Seventy One Cent",
+            "Three Hundred Five Dollars Seven One Cent",
+            "Three Zero Five Point Seven One",
+            "Three Zero Five Dot Seven One",
+            "3 0 5 . 7 1",
+            "305 . 7 1",
+            "305 . 71",
+            "305.71"
+          ]
+        },
+        {
+          "value": "Six Cents",
+          "synonyms": [
+            "Six Cent",
+            "Point Zero Six",
+            "Dot Zero 6",
+            "Point Zero Six Cents",
+            "Dot Zero 6 Cents",
+            ". 0 6"
+          ]
+        },
+        {
+          "value": "Two Thousand Dollars",
+          "synonyms": [
+            "Two Thousand Dollar",
+            "2000 Dollars",
+            "Two Zero Zero Zero Dollars",
+            "2 0 0 0 Dollars",
+            "Two Thousand Dollars Even",
+            "2000 Dollars Even",
+            "Two Zero Zero Zero Dollars Even",
+            "2 0 0 0 Dollars Even",
+            "Two Thousand",
+            "2000",
+            "Two Zero Zero Zero",
+            "2 0 0 0"
+          ]
+        }
+      ],
+      "includes": []
+    },
+    "allowed_amt": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "Ten Dollars",
+          "synonyms": [
+            "Ten Dollar",
+            "10 Dollars",
+            "One Zero Dollars",
+            "1 0 Dollars",
+            "Ten Dollars Even",
+            "10 Dollars Even",
+            "One Zero Dollars Even",
+            "1 0 Dollars Even",
+            "Ten",
+            "10",
+            "One Zero",
+            "1 0"
+          ]
+        },
+        {
+          "value": "One Hundred Dollars",
+          "synonyms": [
+            "1 Hundred Dollars",
+            "100 Dollars",
+            "One Zero Zero Dollars",
+            "1 0 0 Dollars",
+            "1 Hundred Dollars Even",
+            "100 Dollars Even",
+            "One Zero Zero Dollars Even",
+            "1 0 0 Dollars Even",
+            "1 Hundred",
+            "100",
+            "One Zero Zero",
+            "1 0 0"
+          ]
+        },
+        {
+          "value": "Twenty Five Dollars",
+          "synonyms": [
+            "Two Five Dollars",
+            "Twenty Five Dolars",
+            "25 Dollars",
+            "2 5 Dollars",
+            "Two Five Dollars Even",
+            "Twenty Five Dollars Even",
+            "25 Dollars Even",
+            "2 5 Dollars Even",
+            "Two Five",
+            "Twenty Five",
+            "25",
+            "2 5"
+          ]
+        },
+        {
+          "value": "Forty Five Dollars and Fifty Cent",
+          "synonyms": [
+            "Forty Five Dollars and Fifty Cents",
+            "Forty Five Dollars Fifty Cents",
+            "Four Five Point Five Zero",
+            "Forty Five Point Five Zero",
+            "Forty Five Dot Five Zero",
+            "Forty Five Point Fifty",
+            "Four Five Point Fifty",
+            "4 5 . 5 0",
+            "45 . 50"
+          ]
+        },
+        {
+          "value": "Three Hundred Five Dollars and Seventy One Cents",
+          "synonyms": [
+            "Three Hundred Five Dollars and Seventy One Cent",
+            "Three Hundred Five Dollars Seventy One Cent",
+            "Three Hundred Five Dollars Seven One Cent",
+            "Three Zero Five Point Seven One",
+            "Three Zero Five Dot Seven One",
+            "3 0 5 . 7 1",
+            "305 . 7 1",
+            "305 . 71",
+            "305.71"
+          ]
+        },
+        {
+          "value": "Six Cents",
+          "synonyms": [
+            "Six Cent",
+            "Point Zero Six",
+            "Dot Zero 6",
+            "Point Zero Six Cents",
+            "Dot Zero 6 Cents",
+            ". 0 6"
+          ]
+        },
+        {
+          "value": "Two Thousand Dollars",
+          "synonyms": [
+            "Two Thousand Dollar",
+            "2000 Dollars",
+            "Two Zero Zero Zero Dollars",
+            "2 0 0 0 Dollars",
+            "Two Thousand Dollars Even",
+            "2000 Dollars Even",
+            "Two Zero Zero Zero Dollars Even",
+            "2 0 0 0 Dollars Even",
+            "Two Thousand",
+            "2000",
+            "Two Zero Zero Zero",
+            "2 0 0 0"
+          ]
+        }
+      ],
+      "includes": []
+    },
+    "two_digit": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "Ten Dollars",
+          "synonyms": [
+            "10 Dollars",
+            "$10"
+          ]
+        },
+        {
+          "value": "Twelve Dollars",
+          "synonyms": [
+            "12 Dollars",
+            "$12"
+          ]
+        },
+        {
+          "value": "Forty Five Dollars",
+          "synonyms": [
+            "45 Dollars",
+            "$45"
+          ]
+        },
+        {
+          "value": "Twenty Two Dollars",
+          "synonyms": [
+            "22 Dollars",
+            "$22"
+          ]
+        },
+        {
+          "value": "Eighty Six Dollars",
+          "synonyms": [
+            "86 Dollars",
+            "$86"
+          ]
+        },
+        {
+          "value": "Ninety Nine Dollars",
+          "synonyms": [
+            "99 Dollars",
+            "$99"
+          ]
+        }
+      ],
+      "includes": []
+    },
+    "three_digit": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "100 Dollars",
+          "synonyms": [
+            "100 Dollars",
+            "$100"
+          ]
+        },
+        {
+          "value": "Two hundred Dollars",
+          "synonyms": [
+            "200 Dollars",
+            "$200"
+          ]
+        },
+        {
+          "value": "Four Hundred Five Dollars",
+          "synonyms": [
+            "405 Dollars",
+            "$405"
+          ]
+        },
+        {
+          "value": "Three hundred Two Dollars",
+          "synonyms": [
+            "302 Dollars",
+            "$302"
+          ]
+        },
+        {
+          "value": "Nine hundred Dollars",
+          "synonyms": [
+            "900 Dollars",
+            "$900"
+          ]
+        },
+        {
+          "value": "Five hundred Thirty Six Dollars",
+          "synonyms": [
+            "536 Dollars",
+            "Five Thirty Six Dollars",
+            "$536"
+          ]
+        },
+        {
+          "value": "Four hundred Seventy Seven Dollars",
+          "synonyms": [
+            "477 Dollars",
+            "Four Seventy Seven Dollars",
+            "$477"
+          ]
+        },
+        {
+          "value": "Three hundred Twenty Four Dollars",
+          "synonyms": [
+            "324 Dollars",
+            "Three Twenty Four Dollars",
+            "$324"
+          ]
+        }
+      ],
+      "includes": []
+    },
+    "point_digit": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "Six Cents",
+          "synonyms": [
+            "6 Cents",
+            "$0.06"
+          ]
+        },
+        {
+          "value": "Two Cents",
+          "synonyms": [
+            "2 Cents",
+            "$0.02"
+          ]
+        },
+        {
+          "value": "Five Cents",
+          "synonyms": [
+            "5 Cents",
+            "$0.05"
+          ]
+        },
+        {
+          "value": "Ten Cents",
+          "synonyms": [
+            "10 Cents",
+            "$0.10"
+          ]
+        },
+        {
+          "value": "Seventy Five Cents",
+          "synonyms": [
+            "75 Cents",
+            "$0.75"
+          ]
+        },
+        {
+          "value": "Fifty Cents",
+          "synonyms": [
+            "50 Cents",
+            "$0.50"
+          ]
+        },
+        {
+          "value": "Twenty-Five Cents",
+          "synonyms": [
+            "25 Cents",
+            "$0.25"
+          ]
+        },
+        {
+          "value": "Ninety Cents",
+          "synonyms": [
+            "90 Cents",
+            "$0.90"
+          ]
+        },
+        {
+          "value": "Eighty Nine Cents",
+          "synonyms": [
+            "89 Cents",
+            "$0.89"
+          ]
+        }
+      ],
+      "includes": []
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "default": {
+    "voiceInfo": {
+      "lang": "en-US",
+      "speaker": "Kate",
+      "speed": 0.6
+    },
+    "phrases": {
+      "greeting": {
+        "first": [
+          {
+            "text": "Hello. My name is Selena Bright. I am calling from provider's office to discuss regarding claim status."
+          }
+        ],
+        "repeat": [
+          {
+            "text": "I was just saying, I am calling from provider's office to discuss regarding claims"
+          }
+        ]
+      },
+      "confirm_query": {
+        "first": [
+          {
+            "text": "Okay, so I need to talk related to  "
+          },
+          {
+            "id": "query_status",
+            "type": "dynamic"
+          }
+        ],
+        "repeat": [
+          {
+            "text": "I was just saying, need to talk related to "
+          },
+          {
+            "id": "query_status",
+            "type": "dynamic"
+          }
+        ]
+      },
+      "confirm_number": {
+        "first": [
+          {
+            "text": "Okay, so the number is "
+          },
+          {
+            "id": "data_number",
+            "type": "dynamic"
+          }
+        ],
+        "repeat": [
+          {
+            "text": "I was just saying, the number is"
+          },
+          {
+            "id": "data_number",
+            "type": "dynamic"
+          }
+        ]
+      },
+      "confirm_name": {
+        "first": [
+          {
+            "text": "Okay, so the name is "
+          },
+          {
+            "id": "name",
+            "type": "dynamic"
+          }
+        ],
+        "repeat": [
+          {
+            "text": "I was just saying, the name is"
+          },
+          {
+            "id": "name",
+            "type": "dynamic"
+          }
+        ]
+      }
+    },
+    "types": {},
+    "macros": {
+      "greeting": {},
+      "confirm_query": {},
+      "confirm_number": {},
+      "confirm_name": {}
+    }
+  }
+}
